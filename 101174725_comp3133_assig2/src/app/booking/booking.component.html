@@ -1,0 +1,31 @@
+<p>Bookings</p>
+
+<div *ngIf="loading">
+  Loading...
+</div>
+<div *ngIf="error">
+  Error
+</div>
+<a routerLink="/hotels">Hotels</a>
+<a routerLink="/users">Users</a>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Hotels ID</th>
+    <th scope="col">Booking Date</th>
+    <th scope="col">Booking Start</th>
+    <th scope="col">Booking End</th>
+    <th scope="col">User ID</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let booking of bookings">
+    <th scope="row">{{ booking.hotel_id }}</th>
+    <th scope="row">{{ booking.user_id }}</th>
+    <th scope="row">{{ booking.date }}</th>
+    <th scope="row">{{ booking.start }}</th>
+    <th scope="row">{{ booking.end }}</th>
+  </tr>
+  </tbody>
+</table>
+

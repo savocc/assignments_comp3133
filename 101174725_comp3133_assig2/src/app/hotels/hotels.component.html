@@ -1,0 +1,56 @@
+<p>Hotels List</p>
+
+<div *ngIf="loading">
+  Loading...
+</div>
+<div *ngIf="error">
+  Error
+</div>
+<a routerLink="/bookings">Bookings</a>
+<a routerLink="/users">Users</a>
+<form class="row g-3">
+  <div class="col-auto">
+    <label for="txtSearch" class="visually-hidden">Search By City</label>
+    <input type="text" [(ngModel)]="selectedCity" name="txtSearch" class="form-control" id="txtSearch" placeholder="Search By City...">
+  </div>
+  <div class="col-auto">
+    <br>
+    <button type="submit" class="btn btn-primary mb-3" (click)="searchByHotel()">Search</button>
+  </div>
+</form><br>
+<form class="row g-3">
+  <div class="col-auto">
+    <label for="txtSearch" class="visually-hidden">Search By Hotel Name </label>
+    <input type="text" [(ngModel)]="selectedName" name="txtSearch" class="form-control" id="txtSearch" placeholder="Search By Hotel Name...">
+  </div>
+  <div class="col-auto">
+    <br>
+    <button type="submit" class="btn btn-primary mb-3" (click)="searchByName()">Search</button>
+  </div>
+</form>
+<br><br>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Hotels ID</th>
+    <th scope="col">Hotel Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Postal Code</th>
+    <th scope="col">City</th>
+    <th scope="col">Street</th>
+    <th scope="col">Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let hotel of hotels">
+    <th scope="row">{{ hotel.hotel_id }}</th>
+    <th scope="row">{{ hotel.hotel_name }}</th>
+    <th scope="row">{{ hotel.email }}</th>
+    <th scope="row">{{ hotel.postal_code }}</th>
+    <th scope="row">{{ hotel.city }}</th>
+    <th scope="row">{{ hotel.street }}</th>
+    <th scope="row">{{ hotel.price }}</th>
+  </tr>
+  </tbody>
+</table>
+

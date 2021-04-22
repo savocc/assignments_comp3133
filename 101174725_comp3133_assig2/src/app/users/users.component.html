@@ -1,0 +1,30 @@
+<p> Users List</p>
+
+<div *ngIf="loading">
+  Loading...
+</div>
+<div *ngIf="error">
+  Error
+</div>
+<a routerLink="/bookings">Bookings</a>
+<a routerLink="/hotels">Hotels</a>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">User ID</th>
+    <th scope="col">User Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Password</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <th scope="row">{{ user.user_id }}</th>
+    <th scope="row">{{ user.user_name }}</th>
+    <th scope="row">{{ user.email }}</th>
+    <th scope="row">{{ user.password }}</th>
+  </tr>
+  </tbody>
+</table>
+
